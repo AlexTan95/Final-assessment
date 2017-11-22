@@ -1,0 +1,13 @@
+<h1>Create a Project</h1>
+
+
+<%= form_for Project.new do |x| %>
+	Project title: <%= x.text_field :project_title %><br><br>
+	Project Description: <%= x.text_area :project_description %><br><br>
+	Location: <%= x.text_field :location %><br>
+	Funding required: <%= x.number_field :fund_goal %><br>
+	Project start: <%= x.date_field :start_date %><br>
+	Project end: <%= x.date_field :end_date %><br>
+	<%= x.submit "Create Project" %>
+<% end %>
+

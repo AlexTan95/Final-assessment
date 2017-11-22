@@ -1,0 +1,5 @@
+<%= form_for :donation, url: new_braintree_path, method: :get do |x| %>
+	Donation amount: <%= x.number_field :donation_amount %>
+	<%= x.hidden_field 'project_id', value: params[:project]%>
+	<%= x.submit 'proceed' %>
+<% end %>

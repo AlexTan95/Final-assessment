@@ -1,0 +1,16 @@
+<h1><%= @project_show.project_title %></h1>
+
+Location: <%= @project_show.location %><br><br>
+
+Fund: <%= @project_show.current_fund %>/<%= @project_show.fund_goal %><br><br>
+
+Start Date: <%= @project_show.start_date %><br>
+
+End Date: <%= @project_show.end_date %>
+
+
+<h3>Description</h3>
+
+<p><%= @project_show.project_description%>
+
+<%= button_to 'Fund this project', braintree_donation_path, params: { project: params[:id] }, method: :get%>
