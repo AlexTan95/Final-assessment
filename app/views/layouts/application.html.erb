@@ -18,6 +18,10 @@
   <body>
   <h1>Ripply V.2</h1>
 
+    <% if current_user == nil %>
+      <%= button_to "Login", login_path %>
+    <% end %>
+
   	<% if current_user %>
   		Signed in as <%= current_user.first_name + " " + current_user.last_name %> | <%= button_to "logout", logout_path %>
   	<%end%>

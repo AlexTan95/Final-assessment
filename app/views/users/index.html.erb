@@ -4,8 +4,10 @@
 
 <% @projects.each do |t| %>
 	<div id = 'project-<%=t.id%>'><%= link_to t.project_title, project_path(t.id) %>| |<%= t.fund_goal %>
-		<% if current_user.admin?%>
-			<%= link_to 'delete this project!', project_path(t.id), class: 'remove' %>
-		<% end %><br><br>
+		<% if current_user != nil%>
+			<% if current_user.admin?%>
+				<%= link_to 'delete this project!', project_path(t.id), class: 'remove' %>
+			<% end %><br><br>
+		<% end %>
 	</div>
 <% end %>
